@@ -1,0 +1,41 @@
+
+/*Header*/
+.header {
+    background-image: url(../assets/img/imagenLibros.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-position: center center; /* Centra la imagen horizontal y verticalmente */
+    width: 100vw;
+    height: 40rem;
+}
+h1{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: rgb(211, 9, 9);
+    font-weight: bold;
+    font-size: 4rem;
+}
+/*Header end*/
+
+/*Logo*/
+
+.logo{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+/*Logo end*/
+/*Nabvar*/
+.navegacion{
+    margin: 2rem;
+    text-align: center;
+}
+
+/*Nabvar end*/
+
+/*Footer*/
+.footer{
+    width: 100%;
+}
