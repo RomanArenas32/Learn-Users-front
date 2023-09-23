@@ -6,7 +6,6 @@ import { Login, Register } from "../pages/users";
 export const AppRoutes = () => {
 
   const { auth } = useAuth();
-  console.log(auth)
 
 
   return (
