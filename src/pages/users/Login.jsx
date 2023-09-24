@@ -26,7 +26,7 @@ export const Login = () => {
       localStorage.setItem('token', usuario.token);
       setAuth(usuario)
       setAlerta({
-        mensaje: "Usuario autenticado correctamente",
+        mensaje: "Usuario autenticado correctamente. Redireccionando....",
         error: false
       });
     } catch (error) {
@@ -35,8 +35,8 @@ export const Login = () => {
     }
     setTimeout(() => {
       navigate("../home")
-    }, 2000);
-    
+    }, 6000);
+    setAuth(usuario)
   }
   const { mensaje } = alerta;
   return (

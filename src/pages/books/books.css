@@ -1,0 +1,56 @@
+.panels {
+    display: flex;
+    flex-direction: rows;
+    gap: 15px;
+    padding: 5rem;
+  }
+  
+  .panels .red {
+    background-color: #f43f5e;
+  }
+  
+  .panels .blue {
+    background-color: #3b82f6;
+  }
+  
+  .panels .green {
+    background-color: #22c55e;
+  }
+  
+  .panels .panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms transform, 400ms box-shadow, 400ms background-color;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .panels .panel p.tip {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .panels .panel p.second-text {
+    font-size: 0.7em;
+  }
+  
+  .panels .panel:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #333;
+  }
+  
+  .panels:hover > .panel:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  

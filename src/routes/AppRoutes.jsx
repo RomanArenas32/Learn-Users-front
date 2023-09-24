@@ -12,6 +12,8 @@ export const AppRoutes = () => {
     <Routes>
       {/* Rutas públicas (accesibles para todos) */}
       <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+
       <Route path="/registrarse" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/confirmar/:id" element={<ConfirmarCuenta />} />
