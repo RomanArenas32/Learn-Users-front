@@ -31,6 +31,7 @@ export const Login = () => {
       });
     } catch (error) {
       setAlerta({ mensaje: error.response.data.msg, error: true })
+      return;
     }
     setTimeout(() => {
       navigate("../home")
