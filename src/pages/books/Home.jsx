@@ -3,14 +3,16 @@ import { Header, Nabvar } from "../../components"
 import { useAuth } from "../../hooks"
 import './books.css'
 
+
 export const Home = () => {
 
   const navigate = useNavigate();
   const { auth } = useAuth();
-
+console.log(auth)
   return (
     <>
       <Header />
+
       <div className="panels">
 
         <div className="panel blue">
@@ -22,7 +24,7 @@ export const Home = () => {
           <h6 className="second-text">únete a la comunidad</h6>
         </div>
         {
-          auth.emal && <div className="panel red">
+          auth.email && <div className="panel red">
             <p className="tip">Salir!</p>
             <p className="second-text">Vuelve pronto</p>
           </div>

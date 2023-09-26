@@ -36,7 +36,7 @@ export const Login = () => {
     setTimeout(() => {
       navigate("../home")
     }, 6000);
-    setAuth(usuario)
+
   }
   const { mensaje } = alerta;
   return (
