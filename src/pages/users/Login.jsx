@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../../components';
 import './pagesUser.css';
 import { useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
 import { Alerta } from '../../components/Alerta';
 import clienteAxios from '../../config/axios';
 
@@ -13,7 +12,7 @@ export const Login = () => {
   const [alerta, setAlerta] = useState({});
   const navigate = useNavigate();
 
-  const { setAuth } = useAuth();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if ([email, password].includes("")) {
@@ -22,9 +21,8 @@ export const Login = () => {
     }
     try {
       const { data } = await clienteAxios.post(`/users/login`, { email, password });
-      const { usuario } = data;
-      localStorage.setItem('token', usuario.token);
-      setAuth(usuario)
+      localStorage.setItem('token', data.token);
+      
       setAlerta({
         mensaje: "Usuario autenticado correctamente. Redireccionando....",
         error: false

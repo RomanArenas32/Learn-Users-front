@@ -4,7 +4,9 @@ import { Social } from "../utils"
 export const Footer = () => {
   return (
     <footer className="footer">
-      <div>1</div>
+      <div>
+        <p>Todos los derechos reservados <span>2023</span></p>
+      </div>
       <div>
         <Social/>
       </div>

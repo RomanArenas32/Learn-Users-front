@@ -9,18 +9,20 @@ const AuthProvider = ({ children }) => {
   useEffect(()=>{
     const autenticarUsuario = async()=>{
       const token = localStorage.getItem('token');
+      //console.log(token)
       if(!token) return
 
 
       const config = {
         headers: {
-         "Content-Type": "application/json",
-          Autorization: `Bearer ${token}`
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
         }
       }
       try {
-        const  {data} = await clienteAxios.get(`/users/perfil`, config);
-        console.log(data)
+        const {data} = await clienteAxios.get(`/users/perfil`, config);
+       // console.log(data)
+        setAuth(data.user)
       } catch (error) {
         console.log(error.response.data.msg)
       }
@@ -28,7 +30,7 @@ const AuthProvider = ({ children }) => {
     autenticarUsuario();
   }, [])
 
-  console.log(auth)
+
 
   return (
     <AuthContext.Provider
