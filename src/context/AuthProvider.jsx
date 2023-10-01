@@ -30,12 +30,40 @@ const AuthProvider = ({ children }) => {
     autenticarUsuario();
   }, [])
 
+  const actualizarPerfil = async datos => {
+    const { _id } = datos;
+    const token = localStorage.getItem('token')
 
+    if (!token) {
+      setCargando(false);
+      return
+    }
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    }
+    try {
+      const url = `/users/perfil/${_id}`;
+      const { data } = await clienteAxios.put(url, datos, config);
+      return {
+        msg: "Usuario actualizado con exito",
+        error: false
+      }
+    } catch (error) {
+      return {
+        msg: error.response.data.msg,
+        error: true
+      }
+    }
+
+  }
 
   return (
     <AuthContext.Provider
       value={{
-       
+        actualizarPerfil,
         auth,
         setAuth,
       }}

@@ -32,7 +32,7 @@ export const Home = () => {
                   <p className="text-body">Actualiza tu perfil para publicar contenido</p>
                   <p className="text-body">o descarga todo el contenido gratuito mas abajo en el boton "Dowload"</p>
                 </div>
-                <button className="perfil-button">Actualizar tu perfil</button>
+                <button className="perfil-button" onClick={()=> navigate("../perfil")}>Actualizar tu perfil</button>
               </div>
             </>
             :

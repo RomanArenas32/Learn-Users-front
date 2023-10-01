@@ -1,73 +1,84 @@
 /*Login*/
 form {
-    --bg-light: #efefef;
-    --bg-dark: #707070;
-    --clr: #58BC82;
-    --clr-alpha: #9c9c9c60;
-    display: grid;
-    place-items: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 2rem;
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58BC82;
+  --clr-alpha: #9c9c9c60;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
 }
 
 form input[type="email"],
 form input[type="password"],
 form input[type="text"],
-form input[type="number"] 
-{
-    border-radius: 0.5rem;
-    padding: 1rem 0.75rem;
-    width: 350px;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--clr-alpha);
-    outline: 2px solid var(--bg-dark);
+form input[type="number"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 350px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+
+select {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 350px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
 }
 
 form input[type="email"]:focus,
 form input[type="password"]:focus,
 form input[type="text"]:focus {
-    outline: 2px solid var(--clr);
+  outline: 2px solid var(--clr);
 }
 
 .label {
-    color: var(--clr);
-    font-weight: 600;
+  color: var(--clr);
+  font-weight: 600;
 }
 
 form .submit {
-    
-    padding: 1rem 0.75rem;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    border-radius: 3rem;
-    background-color: var(--bg-dark);
-    color: var(--bg-light);
-    border: none;
-    cursor: pointer;
-    transition: all 300ms;
-    font-weight: 600;
-    font-size: .9rem;
+
+  padding: 1rem 0.75rem;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: .9rem;
 }
 
 form .submit:hover {
-    background-color: var(--clr);
-    color: var(--bg-dark);
+  background-color: var(--clr);
+  color: var(--bg-dark);
 }
 
 .span {
-    text-decoration: none;
-    color: var(--bg-dark);
+  text-decoration: none;
+  color: var(--bg-dark);
 }
 
 .span-p {
-    color: var(--clr);
-    text-decoration: none;
+  color: var(--clr);
+  text-decoration: none;
 }
 
 
@@ -75,78 +86,79 @@ form .submit:hover {
 
 
 /*ConfirmarCuenta*/
-.contenedor-obj{
-    width: 100vw;
-    height: 50vh;
-    display: grid;
-    place-items: center;
+.contenedor-obj {
+  width: 100vw;
+  height: 50vh;
+  display: grid;
+  place-items: center;
 }
+
 .obj {
-    position: relative;
-    width: 500px;
-    height: 500px;
-      /* background-color: rgb(96, 96, 232); */
-    transform-style: preserve-3d;
-    transition: 0.5s all;
-    transform: rotateX(-25deg) rotateY(20deg);
+  position: relative;
+  width: 500px;
+  height: 500px;
+  /* background-color: rgb(96, 96, 232); */
+  transform-style: preserve-3d;
+  transition: 0.5s all;
+  transform: rotateX(-25deg) rotateY(20deg);
+}
+
+.objchild {
+  animation: rotate 4s infinite linear;
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background:linear-gradient( to top,rgb(11, 11, 102),rgb(96, 96, 232) ) ; */
+}
+
+.objchild::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: rgb(37, 101, 230); */
+  /* background: radial-gradient(center center, farthest-side , #9993, transparent); */
+  filter: blur(20px);
+  box-shadow: 0 0 200px 15px white;
+  transform: rotateX(90deg) scale(1.1) translateZ(-120px);
+}
+
+.inn6 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(21, 21, 21);
+  transform: rotateX(90deg) translateZ(100px);
+  animation: updown 4s infinite ease-in-out;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
   }
-  
-  .objchild {
-    animation: rotate 4s infinite linear;
-    transform-style: preserve-3d;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-      /* background:linear-gradient( to top,rgb(11, 11, 102),rgb(96, 96, 232) ) ; */
+
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
   }
-  
-  .objchild::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-      /* background: rgb(37, 101, 230); */
-      /* background: radial-gradient(center center, farthest-side , #9993, transparent); */
-    filter: blur(20px);
-    box-shadow: 0 0 200px 15px white;
-    transform: rotateX(90deg) scale(1.1) translateZ(-120px);
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(100px) rotateX(90deg) translateZ(100px);
   }
-  
-  .inn6 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(21, 21, 21);
-    transform: rotateX(90deg) translateZ(100px);
-    animation: updown 4s infinite ease-in-out;
-    display: grid;
-    place-items: center;
-    font-weight: bold;
+
+  50% {
+    transform: translateY(200px);
   }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate3d(0,1,0,0deg);
-    }
-  
-    100% {
-      transform: rotate3d(0,1,0,360deg);
-    }
+
+  100% {
+    transform: translateY(100px) rotateX(450deg) translateZ(100px);
   }
-  
-  @keyframes updown {
-    0% {
-      transform: translateY(100px) rotateX(90deg) translateZ(100px);
-    }
-  
-    50% {
-      transform: translateY(200px);
-    }
-  
-    100% {
-      transform: translateY(100px) rotateX(450deg) translateZ(100px);
-    }
-  }
+}
 
 /*ConfirmarCuenta end*/
 
@@ -159,7 +171,7 @@ form .submit:hover {
   background-size: auto 5px;
   border: 0;
   border-radius: 50px;
-  box-shadow: inset 0 10px 20px rgba(164, 142, 142, 0.4), 0 -1px 0px rgba(0,0,0,.2), inset 0 -1px 0px #fff;
+  box-shadow: inset 0 10px 20px rgba(164, 142, 142, 0.4), 0 -1px 0px rgba(0, 0, 0, .2), inset 0 -1px 0px #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 0;
@@ -171,12 +183,12 @@ form .submit:hover {
 }
 
 .bauble_box .bauble_label:before {
-  background-color: rgba(255,255,255,.2);
+  background-color: rgba(255, 255, 255, .2);
   background-position: 0 0;
   background-repeat: repeat;
   background-size: 30% auto;
   border-radius: 50%;
-  box-shadow: inset 0 -5px 25px #050, 0 10px 20px rgba(0,0,0,.4);
+  box-shadow: inset 0 -5px 25px #050, 0 10px 20px rgba(0, 0, 0, .4);
   content: '';
   display: block;
   height: 30px;
@@ -195,13 +207,32 @@ form .submit:hover {
 }
 
 /* Checked */
-.bauble_box input.bauble_input:checked + .bauble_label {
+.bauble_box input.bauble_input:checked+.bauble_label {
   background-color: #c22;
 }
 
-.bauble_box input.bauble_input:checked + .bauble_label:before {
+.bauble_box input.bauble_input:checked+.bauble_label:before {
   background-position: 150% 0;
-  box-shadow: inset 0 -5px 25px #500, 0 10px 20px rgba(0,0,0,.4);
-  left: calc( 100% - 35px );
+  box-shadow: inset 0 -5px 25px #500, 0 10px 20px rgba(0, 0, 0, .4);
+  left: calc(100% - 35px);
 }
+
 /*boton si/no fin*/
+
+
+/*Perfil*/
+
+.header-perfil {
+  background-image: url(../../assets/img/img2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Evita la repetición de la imagen */
+  background-position: center center;
+  /* Centra la imagen horizontal y verticalmente */
+  width: 100vw;
+  height: 40rem;
+}
+
+
+
+/*Perfil fin*/
